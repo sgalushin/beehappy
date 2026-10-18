@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["es2022"],
+    "module": "preserve",
+    "types": ["node"],
+    "noEmit": true,
+    "isolatedModules": true,
+    "experimentalDecorators": false
+  },
+  "include": ["src/**/*.ts"]
+}

@@ -1,0 +1,14 @@
+services:
+  localstack:
+    image: localstack/localstack:4
+    ports:
+      - '127.0.0.1:4586:4566'
+    environment:
+      LOCALSTACK_AUTH_TOKEN: ${LOCALSTACK_TOKEN:-}
+      SERVICES: dynamodb
+      PERSISTENCE: 1
+    volumes:
+      - ./tools/localstack/init.sh:/etc/localstack/init/ready.d/init.sh
+      - beehappy-localstack:/var/lib/localstack
+volumes:
+  beehappy-localstack:

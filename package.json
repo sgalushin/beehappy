@@ -1,0 +1,53 @@
+{
+  "name": "@beehappy/source",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@12.4.2",
+  "scripts": {
+    "serve": "nx serve web",
+    "check": "nx run-many -t lint typecheck test build",
+    "test": "nx run-many -t test",
+    "format": "prettier --write . && cargo fmt --manifest-path apps/api/Cargo.toml",
+    "format:check": "prettier --check . && cargo fmt --manifest-path apps/api/Cargo.toml -- --check",
+    "deploy": "node --env-file=.env tools/deploy.mjs"
+  },
+  "dependencies": {
+    "@angular/common": "~22.2.2",
+    "@angular/compiler": "~22.2.2",
+    "@angular/core": "~22.2.2",
+    "@angular/forms": "~22.2.2",
+    "@angular/platform-browser": "~22.2.2",
+    "@angular/router": "~22.2.2",
+    "@lucide/angular": "^1.57.0",
+    "oidc-client-ts": "^3.5.0",
+    "rxjs": "~7.8.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/core": "~22.2.2",
+    "@angular-devkit/schematics": "~22.2.2",
+    "@angular/build": "~22.2.2",
+    "@angular/cli": "~22.2.2",
+    "@angular/compiler-cli": "~22.2.2",
+    "@angular/language-service": "~22.2.2",
+    "@eslint/js": "^10.0.1",
+    "@nx/angular": "23.3.0",
+    "@nx/eslint": "23.3.0",
+    "@nx/eslint-plugin": "23.3.0",
+    "@nx/workspace": "23.3.0",
+    "@schematics/angular": "~22.2.2",
+    "@types/node": "^24.0.0",
+    "@typescript-eslint/utils": "^8.58.0",
+    "angular-eslint": "^22.1.0",
+    "aws-cdk": "^2.1145.0",
+    "aws-cdk-lib": "^2.273.0",
+    "constructs": "^10.8.1",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.0.0",
+    "nx": "23.3.0",
+    "prettier": "~3.9.10",
+    "tslib": "^2.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.58.0"
+  }
+}

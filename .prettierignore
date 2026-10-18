@@ -1,0 +1,10 @@
+node_modules
+pnpm-lock.yaml
+Cargo.lock
+**/Cargo.lock
+**/target
+dist
+cdk.out
+.nx
+.angular
+.env
