@@ -41,8 +41,7 @@ import { SentenceText } from '../shared/sentence';
           <section class="panel detail-section">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">The meaning</p>
-                <h2>Every shade of meaning.</h2>
+                <h2>Meanings</h2>
               </div>
               <span class="count-label"
                 >{{ detail.word.meanings.length }}
@@ -61,8 +60,7 @@ import { SentenceText } from '../shared/sentence';
           <section class="panel detail-section">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">In context</p>
-                <h2>More than a word.</h2>
+                <h2>Sentences</h2>
               </div>
               <span class="count-label"
                 >{{ detail.word.sentences.length }}
@@ -85,7 +83,7 @@ import { SentenceText } from '../shared/sentence';
               <div class="subtle-empty">
                 <p>No sentences yet. Add a sentence to practice this word in context.</p>
                 <a [routerLink]="['/vocabulary', detail.word.id, 'edit']" class="text-link"
-                  >Add a little context →</a
+                  >Add a sentence →</a
                 >
               </div>
             }
@@ -93,8 +91,7 @@ import { SentenceText } from '../shared/sentence';
           <section class="panel detail-section">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">Your practice</p>
-                <h2>A memory in the making.</h2>
+                <h2>Review history</h2>
               </div>
               <span class="count-label">{{ detail.history.length }} reviews</span>
             </div>
@@ -143,8 +140,7 @@ import { SentenceText } from '../shared/sentence';
         </div>
         <aside class="detail-aside">
           <section class="panel detail-section">
-            <p class="eyebrow">One shared schedule</p>
-            <h3>Next encounter</h3>
+            <h3>Schedule</h3>
             <p class="next-due">
               {{
                 detail.word.card.due <= now()
@@ -187,8 +183,7 @@ import { SentenceText } from '../shared/sentence';
             </dl>
           </section>
           <section class="panel detail-section">
-            <p class="eyebrow">Two different signals</p>
-            <h3>How it’s sticking.</h3>
+            <h3>Recall statistics</h3>
             <div class="recall-stat">
               <span>{{ percent(detail.recallProbability) }}</span>
               <p>FSRS estimated recall now</p>

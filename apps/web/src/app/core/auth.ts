@@ -1,5 +1,5 @@
 import { Injectable, inject, signal } from '@angular/core';
-import { Router, type CanActivateFn } from '@angular/router';
+import type { CanActivateFn } from '@angular/router';
 import { UserManager, WebStorageStateStore, type User } from 'oidc-client-ts';
 
 interface AuthSettings {
@@ -145,12 +145,12 @@ export class Auth {
 
 export const authGuard: CanActivateFn = async () => {
   const auth = inject(Auth);
-  const router = inject(Router);
   try {
     await auth.ready();
     if (!auth.enabled() || (await auth.token())) return true;
-  } catch {
-    // Configuration errors must never fall back to anonymous API access.
+    await auth.login();
+  } catch (error) {
+    auth.error.set(error instanceof Error ? error.message : 'Unable to open secure sign-in.');
   }
-  return router.createUrlTree(['/sign-in']);
+  return false;
 };

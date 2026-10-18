@@ -16,9 +16,8 @@ import { inferTarget, validSpan } from '../shared/sentence-target';
     >
     <header class="page-header">
       <div>
-        <p class="eyebrow">{{ id ? 'Refine your collection' : 'A new discovery' }}</p>
-        <h1>{{ id ? 'Edit your word.' : 'Keep a word.' }}</h1>
-        <p class="lede">Capture its meaning. Keep the context that makes it yours.</p>
+        <h1>{{ id ? 'Edit word' : 'Add a word' }}</h1>
+        <p class="lede">Save meanings and sentences in American English.</p>
       </div>
     </header>
     @if (loading()) {
@@ -34,8 +33,7 @@ import { inferTarget, validSpan } from '../shared/sentence-target';
           <section class="panel editor-section">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">01 / The word</p>
-                <h2>What caught your attention?</h2>
+                <h2>Word</h2>
               </div>
             </div>
             <label for="word-text">Word or phrase</label
@@ -56,8 +54,7 @@ import { inferTarget, validSpan } from '../shared/sentence-target';
           <section class="panel editor-section">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">02 / The meaning</p>
-                <h2>A little more nuance.</h2>
+                <h2>Meanings</h2>
               </div>
               <button
                 type="button"
@@ -127,7 +124,7 @@ import { inferTarget, validSpan } from '../shared/sentence-target';
                 <div class="row between">
                   <div>
                     <span class="badge honey">AI suggestions · not saved</span>
-                    <h3>Choose what fits.</h3>
+                    <h3>Suggested meanings</h3>
                   </div>
                   <button
                     type="button"
@@ -171,8 +168,7 @@ import { inferTarget, validSpan } from '../shared/sentence-target';
           <section class="panel editor-section">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">03 / The context</p>
-                <h2>Give it a place to live.</h2>
+                <h2>Sentences</h2>
               </div>
               <button
                 type="button"
@@ -290,7 +286,7 @@ import { inferTarget, validSpan } from '../shared/sentence-target';
                 <div class="row between">
                   <div>
                     <span class="badge honey">AI suggestions · not saved</span>
-                    <h3>New contexts to consider.</h3>
+                    <h3>Suggested sentences</h3>
                   </div>
                   <button
                     type="button"
@@ -331,8 +327,7 @@ import { inferTarget, validSpan } from '../shared/sentence-target';
         </fieldset>
         <aside class="editor-aside">
           <div class="panel save-panel">
-            <p class="eyebrow">Small steps, lasting words</p>
-            <h3>{{ id ? 'Make it more memorable.' : 'Ready when you are.' }}</h3>
+            <h3>Save word</h3>
             <p class="muted small">
               One word, one learning schedule. Practice the word alone or in context—both strengthen
               the same memory.

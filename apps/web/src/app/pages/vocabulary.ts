@@ -12,9 +12,8 @@ import { Api, errorMessage } from '../core/api';
   template: `
     <header class="page-header">
       <div>
-        <p class="eyebrow">Your personal collection</p>
-        <h1>Words worth keeping.</h1>
-        <p class="lede">Every word has a story. Start with the sentence where you found it.</p>
+        <h1>Vocabulary</h1>
+        <p class="lede">Your saved words, meanings, and sentences.</p>
       </div>
       <a routerLink="/vocabulary/new" class="button primary"
         ><span aria-hidden="true">＋</span> Add a word</a
@@ -26,7 +25,7 @@ import { Api, errorMessage } from '../core/api';
       ><span
         ><i class="status-dot due" aria-hidden="true"></i><strong>{{ dueCount() }}</strong> ready to
         review</span
-      ><a routerLink="/review" class="text-link">A little practice →</a>
+      ><a routerLink="/review" class="text-link">Start review →</a>
     </section>
     <div class="toolbar">
       <label class="search-field"
@@ -69,13 +68,8 @@ import { Api, errorMessage } from '../core/api';
       </div>
     } @else if (!words().length) {
       <section class="panel empty">
-        <span class="empty-mark" aria-hidden="true">Aa</span>
-        <p class="eyebrow">A blank page, full of possibility</p>
-        <h2>Your next word starts here.</h2>
-        <p>
-          Save a word you encountered and the sentence that made it interesting. We’ll help you
-          remember it.
-        </p>
+        <h2>No words yet</h2>
+        <p>Add a word and the sentence where you encountered it.</p>
         <a routerLink="/vocabulary/new" class="button primary">Add your first word</a>
       </section>
     } @else if (!filtered().length) {

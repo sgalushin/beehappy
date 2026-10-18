@@ -10,9 +10,8 @@ import { Api, errorMessage, percent } from '../core/api';
   template: `
     <header class="page-header">
       <div>
-        <p class="eyebrow">The bigger picture</p>
-        <h1>Small habits. Lasting progress.</h1>
-        <p class="lede">A clearer view of the words you’re making your own.</p>
+        <h1>Progress</h1>
+        <p class="lede">Vocabulary, review activity, and recall statistics.</p>
       </div>
       <button class="button" (click)="load()" [disabled]="loading()">Refresh progress</button>
     </header>
@@ -65,8 +64,7 @@ import { Api, errorMessage, percent } from '../core/api';
         <section class="panel chart-panel">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Showing up matters</p>
-              <h2>The last 30 days.</h2>
+              <h2>Review activity</h2>
             </div>
             <span class="badge neutral">{{ recentReviews() }} reviews</span>
           </div>
@@ -122,8 +120,7 @@ import { Api, errorMessage, percent } from '../core/api';
         <section class="panel chart-panel">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">What’s ahead</p>
-              <h2>A gentle forecast.</h2>
+              <h2>Upcoming reviews</h2>
             </div>
           </div>
           <p class="small muted">
@@ -147,8 +144,7 @@ import { Api, errorMessage, percent } from '../core/api';
       </div>
       <div class="progress-layout">
         <section class="panel detail-section">
-          <p class="eyebrow">What your answers tell us</p>
-          <h2>Observed, not estimated.</h2>
+          <h2>Observed recall</h2>
           <div class="accuracy-heading">
             <strong>{{ percent(stats.accuracy) }}</strong
             ><span class="muted">observed answer accuracy</span>
@@ -184,8 +180,7 @@ import { Api, errorMessage, percent } from '../core/api';
           </div>
         </section>
         <section class="panel detail-section">
-          <p class="eyebrow">How memory is modeled</p>
-          <h2>One word. One schedule.</h2>
+          <h2>Learning states</h2>
           <p class="muted">
             FSRS estimates how likely you are to recall each word right now. This probability
             changes over time and is different from the accuracy measured from your answers.

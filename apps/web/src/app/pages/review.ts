@@ -21,9 +21,8 @@ import { SentenceText } from '../shared/sentence';
   template: `
     <header class="page-header">
       <div>
-        <p class="eyebrow">A little practice, every day</p>
-        <h1>Make it stay.</h1>
-        <p class="lede">Recall first. Reveal when you’re ready. Let your memory set the pace.</p>
+        <h1>Review</h1>
+        <p class="lede">Recall the meaning, reveal the answer, then grade your recall.</p>
       </div>
     </header>
     <div class="review-toolbar">
@@ -56,7 +55,7 @@ import { SentenceText } from '../shared/sentence';
       </section>
     } @else if (loadError()) {
       <section class="panel empty">
-        <h2>Practice will be right here.</h2>
+        <h2>Unable to load reviews</h2>
         <p class="notice error" role="alert">{{ loadError() }}</p>
         <button class="button primary" (click)="load()">Try again</button>
       </section>
@@ -76,9 +75,7 @@ import { SentenceText } from '../shared/sentence';
         <span [style.width.%]="batchSize() ? (completed() / batchSize()) * 100 : 0"></span>
       </div>
       <section class="panel review-card" aria-live="polite">
-        <p class="eyebrow">
-          {{ mode() === 'word' ? 'Bring the meaning to mind' : 'Recall the word in its context' }}
-        </p>
+        <p class="small muted">{{ mode() === 'word' ? 'Word only' : 'In context' }}</p>
         @if (mode() === 'context' && context(); as sentence) {
           <blockquote class="review-context"><app-sentence [sentence]="sentence" /></blockquote>
           <p class="small muted review-source">
@@ -155,14 +152,10 @@ import { SentenceText } from '../shared/sentence';
     } @else {
       <section class="panel empty review-complete">
         <span class="empty-mark" aria-hidden="true">{{ completed() ? '✓' : 'Aa' }}</span>
-        <p class="eyebrow">
-          {{ completed() ? 'A little stronger than before' : 'Room to let it settle' }}
-        </p>
-        <h2>{{ completed() ? 'A good place to pause.' : 'You’re up to date.' }}</h2>
+        <h2>{{ completed() ? 'Review complete' : 'No words due' }}</h2>
         @if (completed()) {
           <p>
-            You practiced {{ completed() }} {{ completed() === 1 ? 'word' : 'words' }} in this
-            batch. Every encounter makes the next one easier.
+            You reviewed {{ completed() }} {{ completed() === 1 ? 'word' : 'words' }} in this batch.
           </p>
         } @else {
           <p>

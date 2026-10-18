@@ -20,6 +20,8 @@ Source and deployment history: https://github.com/sgalushin/beehappy
 
 Matches the neighboring Redrat/Moonrabbit projects: Angular 22, signals, Nx 23, pnpm 12, Node 24, Rust/Axum, FSRS, DynamoDB, LocalStack, TypeScript AWS CDK, Cognito, API Gateway, ARM64 Lambda, S3, and CloudFront. No custom domain is required.
 
+The interface follows Moonrabbit's library design: system typography, square controls, bold borders, hard shadows, colorful statistics, and light/dark appearance. Unauthenticated production visits redirect directly to Cognito managed login, as in Redrat; there is no landing page or separate sign-in screen. Failed authentication/configuration shows a retryable error rather than falling back to anonymous access.
+
 ## Local development
 
 Prerequisites: Node from `.node-version`, pnpm, stable Rust, Docker Compose, and AWS CLI. Lambda packaging additionally requires Zig and cargo-lambda.
