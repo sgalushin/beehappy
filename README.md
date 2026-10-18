@@ -2,6 +2,10 @@
 
 A private English vocabulary workspace for words encountered in real sentences. Definitions and generated examples use proper American English, without translation. Each word can contain several meanings and any number of saved examples within the documented request limits.
 
+Live application: https://d2sntizeyub9jh.cloudfront.net
+
+Source and deployment history: https://github.com/sgalushin/beehappy
+
 ## Learning
 
 - Add a word or phrase, its meanings, and sentences manually, or generate draft meanings/examples with Claude Sonnet 5.5 through OpenRouter. Generation never saves or overwrites an entry automatically.
@@ -78,7 +82,7 @@ For an explicit local deployment after building:
 
 ```sh
 pnpm exec nx run-many -t build
-pnpm deploy
+pnpm run deploy
 ```
 
 The deployment command loads `.env`, discovers the AWS account, and writes outputs to `cdk.out/outputs.json`. Credentials, synthesized templates, build outputs, and local data are excluded from Git.
