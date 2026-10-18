@@ -88,11 +88,11 @@ pub async fn create(
         sk: word_key(&id),
         version: 0,
         deleted: false,
-        word: word.clone(),
+        word,
     };
     let name = NameRecord {
         pk: record.pk.clone(),
-        sk: validation::name_key(&word.text),
+        sk: validation::name_key(&record.word.text),
         word_id: id,
     };
     if !state
@@ -107,7 +107,7 @@ pub async fn create(
             "This word or phrase already exists. Add meanings to the existing entry.",
         ));
     }
-    Ok((StatusCode::CREATED, Json(word)))
+    Ok((StatusCode::CREATED, Json(record.word)))
 }
 pub async fn update(
     State(state): State<AppState>,
